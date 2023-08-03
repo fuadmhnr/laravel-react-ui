@@ -1,10 +1,10 @@
 import { useEffect, FormEventHandler } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
+import GuestLayout from '@/Layouts/guest-layout';
 import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
 import { Input } from '@/Components/ui/input';
+import { Label } from '@/Components/ui/label';
+import { Button } from '@/Components/ui/button';
 
 export default function Register() {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,12 +27,10 @@ export default function Register() {
   };
 
   return (
-    <GuestLayout>
-      <Head title='Register' />
-
+    <>
       <form onSubmit={submit}>
         <div>
-          <InputLabel htmlFor='name' value='Name' />
+          <Label htmlFor='name'>Name</Label>
 
           <Input
             id='name'
@@ -49,7 +47,7 @@ export default function Register() {
         </div>
 
         <div className='mt-4'>
-          <InputLabel htmlFor='email' value='Email' />
+          <Label htmlFor='email'>Email</Label>
 
           <Input
             id='email'
@@ -66,7 +64,7 @@ export default function Register() {
         </div>
 
         <div className='mt-4'>
-          <InputLabel htmlFor='password' value='Password' />
+          <Label htmlFor='password'>Password</Label>
 
           <Input
             id='password'
@@ -83,7 +81,7 @@ export default function Register() {
         </div>
 
         <div className='mt-4'>
-          <InputLabel htmlFor='password_confirmation' value='Confirm Password' />
+          <Label htmlFor='password_confirmation'>Confirm Password</Label>
 
           <Input
             id='password_confirmation'
@@ -100,18 +98,17 @@ export default function Register() {
         </div>
 
         <div className='flex items-center justify-end mt-4'>
-          <Link
-            href={route('login')}
-            className='underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-          >
+          <Link href={route('login')} className='text-muted-foreground hover:text-primary'>
             Already registered?
           </Link>
 
-          <PrimaryButton className='ml-4' disabled={processing}>
+          <Button className='ml-4' disabled={processing}>
             Register
-          </PrimaryButton>
+          </Button>
         </div>
       </form>
-    </GuestLayout>
+    </>
   );
 }
+
+Register.layout = (page: React.ReactNode) => <GuestLayout title='Register' children={page} />;
