@@ -36,8 +36,8 @@ export default function VerifyEmail({ status }: { status?: string }) {
             method='post'
             as='button'
             className={buttonVariants({
-                        variant: 'link'
-                    })}
+              variant: 'link',
+            })}
           >
             Log Out
           </Link>

@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu';
 import { IconChevronDown } from '@tabler/icons-react';
+import { ThemeToggle } from '@/Components/ui/theme-toggle';
 
 export default function Navbar() {
   const { auth } = usePage<PageProps>().props;
@@ -17,7 +18,7 @@ export default function Navbar() {
     <nav className='px-4 sm:px-6 py-2 sm:py-3 border-b border-border/60'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
-          <ApplicationLogo className='h-8 w-auto mr-4 fill-primary' />
+          <ApplicationLogo className='h-8 w-auto mr-4 fill-foreground' />
           <NavLink href={route('home')} active={route().current('home')}>
             Home
           </NavLink>
@@ -25,7 +26,8 @@ export default function Navbar() {
             Dashboard
           </NavLink>
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-center gap-x-4'>
+          <ThemeToggle />
           {auth.user ? (
             <DropdownMenu>
               <DropdownMenuTrigger className='flex items-center justify-between gap-x-4'>
