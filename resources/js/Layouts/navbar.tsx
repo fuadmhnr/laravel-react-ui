@@ -39,6 +39,9 @@ export default function Navbar() {
                 <DropdownMenuItem onClick={() => router.get(route('profile.edit'))}>
                   Profile
                 </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.post(route('logout'))}>
+                  Logout
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (

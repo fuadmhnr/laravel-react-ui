@@ -98,7 +98,7 @@ export default function Register() {
         </div>
 
         <div className='flex items-center justify-end mt-4'>
-          <Link href={route('login')} className='text-muted-foreground hover:text-primary'>
+          <Link href={route('login')} className='text-muted-foreground hover:text-foreground'>
             Already registered?
           </Link>
 
