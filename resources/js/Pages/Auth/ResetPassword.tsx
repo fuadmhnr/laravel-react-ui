@@ -1,10 +1,10 @@
 import { useEffect, FormEventHandler } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
+import GuestLayout from '@/Layouts/guest-layout';
 import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/react';
+import { Label } from '@/Components/ui/label';
+import { Input } from '@/Components/ui/input';
+import { Button } from '@/Components/ui/button';
 
 export default function ResetPassword({ token, email }: { token: string; email: string }) {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,14 +27,14 @@ export default function ResetPassword({ token, email }: { token: string; email: 
   };
 
   return (
-    <GuestLayout>
+    <>
       <Head title='Reset Password' />
 
       <form onSubmit={submit}>
         <div>
-          <InputLabel htmlFor='email' value='Email' />
+          <Label htmlFor='email'>Email</Label>
 
-          <TextInput
+          <Input
             id='email'
             type='email'
             name='email'
@@ -48,16 +48,16 @@ export default function ResetPassword({ token, email }: { token: string; email: 
         </div>
 
         <div className='mt-4'>
-          <InputLabel htmlFor='password' value='Password' />
+          <Label htmlFor='password'>Password</Label>
 
-          <TextInput
+          <Input
             id='password'
             type='password'
             name='password'
             value={data.password}
             className='mt-1 block w-full'
             autoComplete='new-password'
-            isFocused={true}
+            autoFocus
             onChange={(e) => setData('password', e.target.value)}
           />
 
@@ -65,9 +65,9 @@ export default function ResetPassword({ token, email }: { token: string; email: 
         </div>
 
         <div className='mt-4'>
-          <InputLabel htmlFor='password_confirmation' value='Confirm Password' />
+          <Label htmlFor='password_confirmation'>Confirm Password</Label>
 
-          <TextInput
+          <Input
             type='password'
             name='password_confirmation'
             value={data.password_confirmation}
@@ -80,11 +80,15 @@ export default function ResetPassword({ token, email }: { token: string; email: 
         </div>
 
         <div className='flex items-center justify-end mt-4'>
-          <PrimaryButton className='ml-4' disabled={processing}>
+          <Button className='ml-4' disabled={processing}>
             Reset Password
-          </PrimaryButton>
+          </Button>
         </div>
       </form>
-    </GuestLayout>
+    </>
   );
 }
+
+ResetPassword.layout = (page: React.ReactNode) => (
+  <GuestLayout title='Reset Password' children={page} />
+);

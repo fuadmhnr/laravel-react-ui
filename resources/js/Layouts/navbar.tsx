@@ -7,7 +7,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu';
 import { IconChevronDown } from '@tabler/icons-react';
@@ -15,10 +14,10 @@ import { IconChevronDown } from '@tabler/icons-react';
 export default function Navbar() {
   const { auth } = usePage<PageProps>().props;
   return (
-    <nav className='px-4 sm:px-6 py-2'>
+    <nav className='px-4 sm:px-6 py-2 sm:py-3 border-b border-border/60'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
-          <ApplicationLogo className='h-8 w-auto sm:h-10 mr-4 fill-primary' />
+          <ApplicationLogo className='h-8 w-auto mr-4 fill-primary' />
           <NavLink href={route('home')} active={route().current('home')}>
             Home
           </NavLink>
