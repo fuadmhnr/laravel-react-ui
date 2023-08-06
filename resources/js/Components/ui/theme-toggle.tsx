@@ -1,5 +1,6 @@
 import { Button } from './button';
 import { MoonIcon, SunIcon } from 'lucide-react';
+import { Icon } from './icon';
 
 export function ThemeToggle() {
   function disableTransitionsTemporarily() {
@@ -27,13 +28,13 @@ export function ThemeToggle() {
     <Button
       size='icon'
       variant='outline'
-      className='rounded-full'
+      className='flex cursor-pointer items-center justify-center rounded-full focus:outline-none'
       type='button'
       aria-label='Toggle dark mode'
       onClick={toggleMode}
     >
-      <SunIcon className='dark:hidden' />
-      <MoonIcon className='hidden dark:block' />
+      <Icon name='IconSun' className='text-primay dark:hidden' />
+      <Icon name='IconMoonStars' className='hidden text-yellow-500 dark:block' />
     </Button>
   );
 }

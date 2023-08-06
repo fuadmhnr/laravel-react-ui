@@ -17,6 +17,7 @@ import {
   IconUserCircle,
 } from '@tabler/icons-react';
 import { CommandSeparator } from 'cmdk';
+import { Icon } from '@/Components/ui/icon';
 
 export default function CommandPalette({
   openCommandPallete,
@@ -58,15 +59,15 @@ export default function CommandPalette({
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading='Pages'>
           <CommandItem value='Home' onSelect={() => goto(route('home'))}>
-            <IconHome />
+            <Icon name='IconHome' />
             <span>Home</span>
           </CommandItem>
           <CommandItem value='Dashboard' onSelect={() => goto(route('dashboard'))}>
-            <IconChartPie />
+            <Icon name='IconChartPie' />
             <span>Dashboard</span>
           </CommandItem>
           <CommandItem value='Settings' onSelect={() => goto(route('profile.edit'))}>
-            <IconSettings />
+            <Icon name='IconSettings' />
             <span>Settings</span>
           </CommandItem>
           <CommandSeparator />
@@ -76,18 +77,18 @@ export default function CommandPalette({
           {auth.user ? (
             <>
               <CommandItem value='Logout' onSelect={() => router.post(route('logout'))}>
-                <IconLogout />
+                <Icon name='IconLogout' />
                 <span>Logout</span>
               </CommandItem>
             </>
           ) : (
             <>
               <CommandItem value='Login' onSelect={() => goto(route('login'))}>
-                <IconLogin />
+                <Icon name='IconLogin' />
                 <span>Login</span>
               </CommandItem>
               <CommandItem value='Register' onSelect={() => goto(route('register'))}>
-                <IconUserCircle />
+                <Icon name='IconUserCircle' />
                 <span>Register</span>
               </CommandItem>
             </>

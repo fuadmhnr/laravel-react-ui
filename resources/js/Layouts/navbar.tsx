@@ -1,7 +1,7 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import NavLink from '@/Components/nav-link';
 import { PageProps } from '@/types';
-import { router, usePage } from '@inertiajs/react';
+import { Link, router, usePage } from '@inertiajs/react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,10 +9,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu';
-import { IconChevronDown, IconCommand, IconSearch } from '@tabler/icons-react';
 import { ThemeToggle } from '@/Components/ui/theme-toggle';
 import CommandPalette from './command-pallete';
 import { Dispatch, SetStateAction } from 'react';
+import { Icon } from '@/Components/ui/icon';
+import { Button } from '@/Components/ui/button';
 
 export default function Navbar({
   openCommandPalette,
@@ -48,17 +49,18 @@ export default function Navbar({
               onClick={() => handleOpenCommandPalette(true)}
               className='rounded-lg ring-1 ring-ring px-4 py-2 focus:outline-none flex items-center gap-x-4 text-muted-foreground hover:text-foreground'
             >
-              <IconSearch className='h-4 w-4 stroke-1' />
+              <Icon name='IconSearch' className='h-4 w-4 stroke-1' />
               <span>Quick Search...</span>
               <span className='flex items-center'>
-                <IconCommand className='w-4 h-4 stroke-1' /> K
+                <Icon name='IconCommand' className='w-4 h-4 stroke-1' /> K
               </span>
             </button>
             <ThemeToggle />
             {auth.user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger className='flex items-center justify-between gap-x-4'>
-                  {auth.user.name} <IconChevronDown className='w-4 h-4'></IconChevronDown>
+                  {auth.user.name}
+                  <Icon name='IconChevronDown' className='w-4 h-4' />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className='w-72 mr-5'>
                   <DropdownMenuLabel>Manage Account</DropdownMenuLabel>
@@ -74,10 +76,14 @@ export default function Navbar({
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <>
-                <NavLink href={route('login')}>Login</NavLink>
-                <NavLink href={route('register')}>Register</NavLink>
-              </>
+              <div className='flex gap-x-2'>
+                <Button className='rounded-full' size='sm' variant='secondary' asChild>
+                    <Link href={route('login')}>Login</Link>
+                </Button>
+                <Button className='rounded-full' size='sm' asChild>
+                    <Link href={route('register')}>Register</Link>
+                </Button>
+              </div>
             )}
           </div>
         </div>
