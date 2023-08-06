@@ -8,14 +8,6 @@ import {
   CommandList,
 } from '@/Components/ui/command';
 import { router, usePage } from '@inertiajs/react';
-import {
-  IconChartPie,
-  IconHome,
-  IconLogin,
-  IconLogout,
-  IconSettings,
-  IconUserCircle,
-} from '@tabler/icons-react';
 import { CommandSeparator } from 'cmdk';
 import { Icon } from '@/Components/ui/icon';
 

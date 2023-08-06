@@ -13,7 +13,7 @@ export default function Edit({
   return (
     <>
       <Head title='Profile' />
-      <div className='py-12'>
+      <div className='lg:py-12 py-6'>
         <Container>
           <div className='max-w-2xl space-y-6'>
             <UpdateProfileInformationForm mustVerifyEmail={mustVerifyEmail} status={status} />
