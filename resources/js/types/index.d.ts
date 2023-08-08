@@ -18,3 +18,8 @@ export interface CommandPaletteState {
   openCommandPalette: boolean;
   setOpenCommandPalette: Dispatch<SetStateAction<boolean>>;
 }
+
+export interface SidebarState {
+  openSidebar: boolean;
+  setOpenSidebar: Dispatch<SetStateAction<boolean>>;
+}

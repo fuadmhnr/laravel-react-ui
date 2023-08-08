@@ -1,16 +1,18 @@
+import { Card } from '@/Components/ui/card';
 import Container from '@/Components/ui/container';
-import AppLayout from '@/Layouts/app-layout';
+import SectionTitle from '@/Components/ui/section-title';
+import UserLayout from '@/Layouts/user-layout';
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {
   return (
     <div>
       <Head title='Dashboard' />{' '}
-      <Container>
-        <div className='py-12'>Dashboard</div>
-      </Container>
+      <Card>
+        <SectionTitle title='Dashboard' description='Welcome to your dashboard' />
+      </Card>
     </div>
   );
 }
 
-Dashboard.layout = (page: React.ReactNode) => <AppLayout children={page} />;
+Dashboard.layout = (page: React.ReactNode) => <UserLayout children={page} />;

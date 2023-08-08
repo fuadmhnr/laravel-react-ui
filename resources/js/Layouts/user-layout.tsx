@@ -1,44 +1,28 @@
 import { PropsWithChildren, useState } from "react";
 import Navbar from "./navbar";
 import ResponsiveNavbar from "./responsive-navbar";
-import VerticalNavLink from "@/Components/ui/vertical-nav-link";
-import { Separator } from "@/Components/ui/separator";
+import Menu from "./menu";
+import ResponsiveSidebar from "./responsive-sidebar";
+import UserResponsiveNavbar from "./user-responsive-navbar";
 
 export default function UserLayout({ children }: PropsWithChildren) {
   const [open, setOpen] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
+
   return (
     <div>
-      <ResponsiveNavbar
+      <UserResponsiveNavbar
         openCommandPalette={open}
         setOpenCommandPalette={setOpen}
+        setOpenSidebar={setOpenSidebar}
       />
       <Navbar openCommandPalette={open} setOpenCommandPalette={setOpen} />
-      <div className="px-10 py-12 grid gap-8 grid-cols-4">
-        <ul className="col-span-1">
-          <div className="flex flex-col gap-y-1">
-            <VerticalNavLink href={route("dashboard")} icon="IconDashboard">
-              Dashboard
-            </VerticalNavLink>
-            <VerticalNavLink href={route("profile.edit")} icon="IconSettings">
-              Settings
-            </VerticalNavLink>
-            <Separator className="my-2"/>
-            <VerticalNavLink href={'#'} icon="IconArticle">
-              Articles
-            </VerticalNavLink>
-            <VerticalNavLink href={'#'} icon="IconManualGearbox">
-              Category
-            </VerticalNavLink>
-            <Separator className="my-2"/>
-            <VerticalNavLink href={'#'} icon="IconBrandOpenai">
-              Ask AI
-            </VerticalNavLink>
-            <VerticalNavLink href={'#'} icon="IconBrandDiscord">
-              Forum
-            </VerticalNavLink>
-          </div>
-        </ul>
-        <div className="col-span-3">
+      <ResponsiveSidebar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
+      <div className="lg:px-10 lg:py-12 py-6 px-4 grid lg:gap-8 lg:grid-cols-4">
+        <div className="col-span-1 lg:block hidden">
+          <Menu />
+        </div>
+       <div className="lg:col-span-3">
           {children}
         </div>
       </div>
