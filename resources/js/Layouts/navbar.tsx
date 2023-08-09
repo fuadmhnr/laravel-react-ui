@@ -65,7 +65,7 @@ export default function Navbar({
                     {auth.user.name}
                     <Icon name="IconChevronDown" className="w-4 h-4" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-72 mt-2">
+                  <DropdownMenuContent align="end" className="w-72 mt-6">
                     <DropdownMenuLabel>
                       <div className="flex items-center font-normal">
                         <div className="shrink-0">
