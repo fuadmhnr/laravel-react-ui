@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/Components/ui/table";
 import SimplePagination from "@/Components/ui/pagination";
+import UserListOptions from "./partials/user-list-options";
 
 export default function Index() {
   const { data: users, meta, links } = usePage<any>().props.users;
@@ -40,7 +41,11 @@ export default function Index() {
                       <TableCell className="w-0">{meta.from + index}</TableCell>
                       <TableCell>{user.name}</TableCell>
                       <TableCell>{user.created_at}</TableCell>
-                      <TableCell>Options</TableCell>
+                      <TableCell>
+                        <div className="flex justify-end gap-x-1">
+                          <UserListOptions user={user}/>
+                        </div>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </>
