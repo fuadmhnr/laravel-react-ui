@@ -12,7 +12,7 @@ createServer((page) =>
     render: ReactDOMServer.renderToString,
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
-      resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx')),
+      resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     setup: ({ App, props }) => {
       global.route = (name, params, absolute) =>
         route(name, params, absolute, {

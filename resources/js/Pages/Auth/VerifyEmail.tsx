@@ -1,6 +1,6 @@
-import { Button, buttonVariants } from '@/Components/ui/button';
-import GuestLayout from '@/Layouts/guest-layout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Button, buttonVariants } from '@/components/button';
+import GuestLayout from '@/layouts/guest-layout';
+import { Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
 export default function VerifyEmail({ status }: { status?: string }) {

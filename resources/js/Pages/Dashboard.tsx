@@ -1,7 +1,7 @@
-import { Card } from '@/Components/ui/card';
-import Container from '@/Components/ui/container';
-import SectionTitle from '@/Components/ui/section-title';
-import UserLayout from '@/Layouts/user-layout';
+import { Card } from '@/components/card';
+import Container from '@/components/container';
+import SectionTitle from '@/components/section-title';
+import UserLayout from '@/layouts/user-layout';
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {

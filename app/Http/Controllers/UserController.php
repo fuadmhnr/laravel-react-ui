@@ -13,20 +13,20 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response 
+    public function index(): Response
     {
         $users = User::query()
-          ->select('id', 'name', 'email', 'created_at')
-          ->latest()
-          ->paginate(10);
-   
-        return Inertia::render('User/Index', [
-      'users' => UserResource::collection($users)->additional([
-            'meta' => [
-            'has_pages' => $users->hasPages()
-            ]
-        ])      
-      ]);
+            ->select('id', 'name', 'email', 'created_at')
+            ->latest()
+            ->paginate(10);
+
+        return Inertia::render('user/Index', [
+            'users' => UserResource::collection($users)->additional([
+                'meta' => [
+                    'has_pages' => $users->hasPages()
+                ]
+            ])
+        ]);
     }
 
     /**

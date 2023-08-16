@@ -6,10 +6,10 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@/Components/ui/command';
+} from '@/components/command';
 import { router, usePage } from '@inertiajs/react';
 import { CommandSeparator } from 'cmdk';
-import { Icon } from '@/Components/ui/icon';
+import { Icon } from '@/components/icon';
 
 export default function CommandPalette({
   openCommandPallete,

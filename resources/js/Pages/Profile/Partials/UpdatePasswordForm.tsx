@@ -1,11 +1,11 @@
 import { useRef, FormEventHandler } from 'react';
-import InputError from '@/Components/InputError';
+import InputError from '@/components/input-error';
 import { useForm } from '@inertiajs/react';
 import { Transition } from '@headlessui/react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
-import { Label } from '@/Components/ui/label';
-import { Input } from '@/Components/ui/input';
-import { Button } from '@/Components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/card';
+import { Label } from '@/components/label';
+import { Input } from '@/components/input';
+import { Button } from '@/components/button';
 
 export default function UpdatePasswordForm() {
   const passwordInput = useRef<HTMLInputElement>();

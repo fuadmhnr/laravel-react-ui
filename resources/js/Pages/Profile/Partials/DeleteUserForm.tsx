@@ -1,9 +1,8 @@
 import { useRef, useState, FormEventHandler } from 'react';
-import InputError from '@/Components/InputError';
+import InputError from '@/components/input-error';
 import { useForm } from '@inertiajs/react';
-import { Label } from '@/Components/ui/label';
-import { Input } from '@/Components/ui/input';
-import { Button } from '@/Components/ui/button';
+import { Input } from '@/components/input';
+import { Button } from '@/components/button';
 import {
   Dialog,
   DialogContent,
@@ -11,10 +10,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from '@/Components/ui/dialog';
-import SectionTitle from '@/Components/ui/section-title';
-import { Card, CardContent } from '@/Components/ui/card';
+} from '@/components/dialog';
+import SectionTitle from '@/components/section-title';
+import { Card, CardContent } from '@/components/card';
 
 export default function DeleteUserForm() {
   const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -30,10 +28,6 @@ export default function DeleteUserForm() {
   } = useForm({
     password: '',
   });
-
-  const confirmUserDeletion = () => {
-    setConfirmingUserDeletion(true);
-  };
 
   const deleteUser: FormEventHandler = (e) => {
     e.preventDefault();

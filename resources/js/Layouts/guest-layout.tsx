@@ -1,6 +1,6 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card';
-import { ThemeToggle } from '@/Components/ui/theme-toggle';
+import ApplicationLogo from '@/components/app-logo';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/card';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { Head, Link } from '@inertiajs/react';
 import { PropsWithChildren } from 'react';
 
