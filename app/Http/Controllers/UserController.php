@@ -20,7 +20,7 @@ class UserController extends Controller
             ->latest()
             ->paginate(10);
 
-        return Inertia::render('user/Index', [
+        return Inertia::render('user/index', [
             'users' => UserResource::collection($users)->additional([
                 'meta' => [
                     'has_pages' => $users->hasPages(),

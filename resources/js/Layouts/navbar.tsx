@@ -64,7 +64,7 @@ export default function Navbar({ openCommandPalette, setOpenCommandPalette }: Co
                     <div className='flex items-center font-normal'>
                       <div className='mr-3 shrink-0'>
                         <Avatar>
-                          <AvatarImage src='https://www.gravatar.com/avatar/36f37722ab590508da27e71deb48bc7e?s=150&d=mm' />
+                          <AvatarImage src={auth.user.avatar} />
                           <AvatarFallback>{auth.user.acronym}</AvatarFallback>
                         </Avatar>
                       </div>

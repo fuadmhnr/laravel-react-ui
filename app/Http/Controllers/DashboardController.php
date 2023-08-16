@@ -13,6 +13,6 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request): ResponseFactory|Response
     {
-        return inertia('Dashboard');
+        return inertia('dashboard');
     }
 }
