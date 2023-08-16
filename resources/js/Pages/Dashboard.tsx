@@ -1,5 +1,4 @@
 import { Card } from '@/components/card';
-import Container from '@/components/container';
 import SectionTitle from '@/components/section-title';
 import UserLayout from '@/layouts/user-layout';
 import { Head } from '@inertiajs/react';

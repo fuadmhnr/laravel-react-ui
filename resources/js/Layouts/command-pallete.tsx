@@ -10,6 +10,7 @@ import {
 import { router, usePage } from '@inertiajs/react';
 import { CommandSeparator } from 'cmdk';
 import { Icon } from '@/components/icon';
+import { PageProps } from '@/types';
 
 export default function CommandPalette({
   openCommandPallete,
@@ -18,7 +19,7 @@ export default function CommandPalette({
   openCommandPallete: boolean;
   setOpenCommandPallete: (openCommandPallete: boolean) => void;
 }) {
-  const { auth } = usePage().props;
+  const { auth } = usePage<PageProps>().props;
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {

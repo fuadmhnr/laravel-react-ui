@@ -25,7 +25,8 @@
     "nunomaduro/collision": "^7.0",
     "pestphp/pest": "^2.0",
     "pestphp/pest-plugin-laravel": "^2.0",
-    "spatie/laravel-ignition": "^2.0"
+    "spatie/laravel-ignition": "^2.0",
+    "tightenco/duster": "^2.2"
   },
   "autoload": {
     "psr-4": {
@@ -37,7 +38,10 @@
   "autoload-dev": {
     "psr-4": {
       "Tests\\": "tests/"
-    }
+    },
+    "files": [
+      "app/helpers.php"
+    ]
   },
   "scripts": {
     "post-autoload-dump": [

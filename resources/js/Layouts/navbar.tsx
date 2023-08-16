@@ -1,7 +1,6 @@
 import ApplicationLogo from '@/components/app-logo';
-import NavLink from '@/components/nav-link';
-import { CommandPaletteState, PageProps } from '@/types';
-import { Link, router, usePage } from '@inertiajs/react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/avatar';
+import { Button } from '@/components/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,10 +9,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/dropdown-menu';
-import { ThemeToggle } from '@/components/theme-toggle';
-import CommandPalette from './command-pallete';
 import { Icon } from '@/components/icon';
-import { Button } from '@/components/button';
+import NavLink from '@/components/nav-link';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { CommandPaletteState, PageProps } from '@/types';
+import { Link, router, usePage } from '@inertiajs/react';
+import CommandPalette from './command-pallete';
 
 export default function Navbar({ openCommandPalette, setOpenCommandPalette }: CommandPaletteState) {
   const { auth } = usePage<PageProps>().props;
@@ -61,13 +62,11 @@ export default function Navbar({ openCommandPalette, setOpenCommandPalette }: Co
                 <DropdownMenuContent align='end' className='w-72 mt-6'>
                   <DropdownMenuLabel>
                     <div className='flex items-center font-normal'>
-                      <div className='shrink-0'>
-                        <img
-                          className='rounded-full w-10 h-10 mr-3'
-                          src={
-                            'https://www.gravatar.com/avatar/36f37722ab590508da27e71deb48bc7e?s=150&d=mm'
-                          }
-                        />
+                      <div className='mr-3 shrink-0'>
+                        <Avatar>
+                          <AvatarImage src='https://www.gravatar.com/avatar/36f37722ab590508da27e71deb48bc7e?s=150&d=mm' />
+                          <AvatarFallback>{auth.user.acronym}</AvatarFallback>
+                        </Avatar>
                       </div>
                       <div>
                         <div>{auth.user.name}</div>

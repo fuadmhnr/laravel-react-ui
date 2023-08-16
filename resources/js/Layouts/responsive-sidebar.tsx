@@ -1,15 +1,8 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/sheet';
-import { SidebarState } from '@/types';
-import Menu from './menu';
-import { Link } from '@inertiajs/react';
 import ApplicationLogo from '@/components/app-logo';
+import { Sheet, SheetContent } from '@/components/sheet';
+import { SidebarState } from '@/types';
+import { Link } from '@inertiajs/react';
+import Menu from './menu';
 
 export default function ResponsiveSidebar({ openSidebar, setOpenSidebar }: SidebarState) {
   return (

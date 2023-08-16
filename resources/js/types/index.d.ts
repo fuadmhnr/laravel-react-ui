@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export interface User {
   id: number;
@@ -6,6 +6,7 @@ export interface User {
   email: string;
   email_verified_at: string;
   avatar: string;
+  acronym: string;
 }
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {

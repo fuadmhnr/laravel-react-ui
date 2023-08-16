@@ -23,9 +23,9 @@ class UserController extends Controller
         return Inertia::render('user/Index', [
             'users' => UserResource::collection($users)->additional([
                 'meta' => [
-                    'has_pages' => $users->hasPages()
-                ]
-            ])
+                    'has_pages' => $users->hasPages(),
+                ],
+            ]),
         ]);
     }
 
@@ -72,8 +72,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user): void
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return back();
     }
 }

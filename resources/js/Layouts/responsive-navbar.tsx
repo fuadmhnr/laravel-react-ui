@@ -1,17 +1,16 @@
 import ApplicationLogo from '@/components/app-logo';
-import { Icon } from '@/components/icon';
-import { CommandPaletteState, PageProps } from '@/types';
-import { Link, router, usePage } from '@inertiajs/react';
+import { Button } from '@/components/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/dropdown-menu';
-import { Button } from '@/components/button';
+import { Icon } from '@/components/icon';
 import { Separator } from '@/components/separator';
+import { CommandPaletteState, PageProps } from '@/types';
+import { Link, router, usePage } from '@inertiajs/react';
 
 export default function ResponsiveNavbar({
   openCommandPalette,
